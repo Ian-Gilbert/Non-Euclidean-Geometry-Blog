@@ -1,0 +1,88 @@
+% Load Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amscd,amssymb,mathtools,amsfonts,mathrsfs}
+\usepackage[style=ieee]{biblatex}
+\addbibresource{bib.bib}
+\usepackage{graphicx}
+\usepackage{dsfont}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage[shortlabels]{enumitem}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=3.5cm,bottom=3cm]{geometry}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{keyval}
+\usepackage{myTikz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Formatting Specifications
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\familydefault}{\sfdefault}
+\pagestyle{empty}
+\setlength{\parskip}{12pt}
+\setlength{\parindent}{0pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Underline Adjustments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\Tstrut{\rule{0pt}{2.25ex}}
+\newcommand\Bstrut{\rule[-1.5ex]{0pt}{0pt}}
+\newcommand{\TBstrut}{\Tstrut\Bstrut}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% hyperref Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{colorlinks,
+            breaklinks,
+            allcolors=blue,
+            linkcolor=black
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% My fig Environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\define@key{myFig}{width}{\def\width{#1\textwidth}}
+\define@key{myFig}{file}{\def\file{#1}}
+
+\newenvironment{fig}[2][H]
+{
+  % Default Values:
+  \def\width{.5\textwidth}
+  \def\file{}
+  
+  \setkeys{myFig}{#2}
+  
+  \begin{figure}[#1]
+    \ifx\file\@empty
+    \else
+      \centering
+      \includegraphics[width=\width]{pictures/\file}
+  \fi
+}
+{
+  \end{figure}
+  \vspace{-.5cm}
+}
+
+% Italicized Source
+\newcommand{\source}[1]{\textit{Source:} \url{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Misc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\lol}[1][http://en.wikipedia.org/wiki/Special:Random]{\textsuperscript{{\href{#1}{[Citation Needed]}}}}
+
+\renewcommand{\deg}{\ensuremath{^\circ}}
+
+\newcommand{\elements}{\textit{Elements}}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil(#1)%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}}
+  {\signed{\usebox\mybox}\end{quote}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,280 @@
+\documentclass[12pt]{article}
+\usepackage{myStyle}
+
+\title{Euclid's Fifth Postulate and the Story of Non-Euclidean Geometry}
+\author{Ian Gilbert}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+It's July, and Santa's bored, so he decides to go for a stroll. From his house on the exact north pole, he starts walking south -- which is, in fact, his only option. After a few miles, he looks up and sees a giant polar bear standing in front of him! The large, cuddly-looking killing machine looks back at him and starts growling, at which point Santa begins to slowly back away. Still jolly as ever, he decides he's not quite done with his walk,\footnote{Still trying to burn off the calories from 7 billion cookies.} and so he turns $90\deg$ to the right and starts walking west. After another few miles the ice pack begins to break up, and before falling though a crevice or being separated from his home, Santa wisely decides that wandering around in the arctic \href{https://www.quora.com/What-are-the-main-dangers-when-trying-to-reach-the-north-pole}{might not have been the best idea} to begin with. So he turns north and walks back home.
+
+Famous for his interest in mathematics,\lol{} Santa decides to relax with his favorite geometry book, when he realizes something.\footnote{This margin is way too narrow!} On his journey, he walked along three straight lines to end up where he started, forming a triangle. Yet both turns were $90\deg$ turns, meaning that he somehow walked in a triangle with two right angles! His geometry book very clearly states that the sum of the angles in a triangle equals $180\deg$, however his triangle clearly adds to more than that. What happened!?
+
+Santa has just discovered non-Euclidean geometry! You may be wondering what non-Euclidean geometry actually is, so allow me to explain: non-Euclidean geometry is any kind of geometry other than Euclidean geometry. Make sense?
+
+Ok, fine. Euclidean geometry is the kind of geometry you learned in high school -- the one where straight lines are drawn with a ruler and the angles of a triangle add to $180\deg$, and so non-Euclidean is any kind of geometry with different rules. Don't worry if you can't picture what that would look like, this is a journey of discovery for you too!
+
+Tragically, the real discovery of non-Euclidean geometries does not involve Santa, any of his elves, or even a reindeer.\footnote{What a bummer. Maybe I should make up a story about Santa and throw it into the intro.} It is, however, a fascinating story in its own right, and offers a fantastic insight into the world of mathematics.
+
+\section*{Euclid and the Elements}
+
+Euclid was an Ancient Greek mathematician who lived in Alexandria, Egypt, around the year 300 BCE. Virtually nothing is known about his life. There are no drawings or descriptions of what he looked like; we don't even know exactly when or where he was born \cite{euclid,boyer2011history}.
+
+Despite this, Euclid is one of the most famous mathematicians of all time, mostly due to his 13 volume textbook, the \elements. This book is so ubiquitous and influential that it has been estimated that over a thousand different editions have been printed, possibly second only to the Bible \cite{boyer2011history}.
+
+Part of what makes the \elements{} so special is how broad it is. Euclid wrote it to be the complete introductory textbook for mathematics. It contains very little original work, but instead builds up the foundation for all of Greek mathematics at the time, containing books on geometry, algebra, and number theory. We will focus on just Book 1, which develops the basics of Euclidean geometry.
+
+The \elements{} is also famous for the logical structure of the book. It begins with his set of axioms that form the basis for his geometric system. As Isaac Asimov once wrote, Euclid was one of the first mathematicians to recognize that ``it was useless to try to prove everything; that it was essential to make a beginning with some things [axioms] that could not be proved but that could be accepted without proof because they satisfied intuition'' \cite{asimov}. Following his axioms are a series of propositions, each clearly laid out and reasoned using only his stated axioms and the preceding propositions. This is still how mathematics is done today.
+
+Choosing your axioms can be tricky. On the one hand, you need enough of them to prove everything that you want to prove, but on the other hand, since the whole point of math is to prove things, you want to assume as few things as possible. If any of your axioms can be proven by your other axioms, or is simply unused, then you should get rid of it.
+
+Additionally, your axioms need to be consistent. This means that they cannot be used to prove contradictory things, like that $4=5$, or that lines are infinitely long and that they have a maximum length. If this happens, then the entire system defined by those axioms is invalid.\footnote{It turns out that in an inconsistent system, every statement can be proven true. And I do mean every single statement. If you assume that $4=5$ and $4\neq5$, you can prove that you can fly! Check out \href{https://math.stackexchange.com/questions/30437/why-in-an-inconsistent-axiom-system-every-statement-is-true-for-dummies}{this link} for a good explanation.}
+
+Euclid used ten axioms, broken down into two groups of five: his common notations, and his postulates. The common notations are meant to be extremely intuitive, and apply generally to math as a whole, rather than to any specific field.  The postulates, while equally intuitive, were meant to apply specifically to geometry.
+
+His first five axioms, the common notations, are as follows  \cite{elements}:
+\begin{enumerate}
+\item Things which equal the same thing also equal one another.
+
+\item If equals are added to equals, then the wholes are equal.
+
+\item If equals are subtracted from equals, then the remainders are equal.
+
+\item Things which coincide with one another equal one another.
+
+\item The whole is greater than the part.
+\end{enumerate}
+
+It is worth noting that the common notations are not perfect. For example, while the even numbers are clearly just a part of the whole numbers, there are actually the same number of each. This contradicts Euclid's fifth common notation. However, while they may not apply as generally as Euclid intended, they work perfectly fine in the context he was working with.
+
+The second group, the postulates, are intended to be just as intuitive as the common notations, but relate specifically to geometry \cite{elements}:
+\begin{enumerate}
+\item To draw a straight line from any point to any point.
+
+\item To produce a finite straight line continuously in a straight line.
+
+\item To describe a circle with any center and radius.
+
+\item That all right angles equal one another.
+
+\item That, if a straight line falling on two straight lines makes the interior angles on the same side less than two right angles, the two straight lines, if produced indefinitely, meet on that side on which are the angles less than the two right angles.
+\end{enumerate}
+
+Hopefully, you notice the problem. The first four postulates are fine, just as easy and intuitive as the common notations. But then there is the fifth postulate. At least in this translation, the fifth postulate alone is over half as long as the other nine axioms combined. To understand what Euclid is trying to say, it helps to consider the following figure:
+\fifthpostulate
+The dotted line $s$ represents the straight line falling on the other two straight lines, $g$ and $h$, while the angles $\alpha$ and $\beta$ are the interior angles on the same side that add up to less than $180\deg$ (two right angles). The fifth postulate then states that $g$ and $h$ will always intersect on the same side as $\alpha$ and $\beta$. This was Euclid's attempt at introducing the concept of parallel lines, since it can easily be deduced from the postulate that two lines will never intersect when $\alpha=\beta=90\deg$. This is why the fifth postulate is often referred to as the parallel postulate.
+
+I'm not sure how I would have ever understood this postulate without a diagram like the one above. It lacks all of the simplicity and intuitiveness of the other nine axioms, and mathematicians -- including Euclid himself -- hated it. And so the next phase of Euclidean geometry began: fixing the fifth postulate.
+
+\section*{Early Attempts to Fix the Fifth Postulate}
+
+The real problem with the fifth postulate is not just that it looks ugly, although that really doesn't help. The real problem stems from the fact that Euclidean geometry was so successful in measuring the world around us that  people interpreted it as a fundamental, and even divine, truth. It was revered as a bridge to the gods, as it must have been them that used it to create the world.
+
+Euclid's axioms were therefore supposed to be the most basic building blocks of this bridge, and the fifth postulate throws a wrench in the whole idea. It seemed arbitrary and messy, as if it was a human creation, in direct contrast to the simplicity and elegance that one would expect in a divine creation. If Euclidean geometry really does depend on it, then all of Euclidean geometry inherits those properties and throws doubt on the idea that Euclidean geometry was an inherent truth.
+
+Scholars of the time were so tied to the divinity of Euclidean geometry, that to doubt it was to doubt the entire concept of absolute truth and, by extension, of a god. This was not acceptable, and so for the next two thousand years, mathematicians would try to prove that Euclidean geometry does not depend on the fifth postulate; that it can simply be removed from the list of axioms, and Euclidean geometry will stay intact.
+
+One way to do this would be to reconstruct every single possible proof in all of Euclidean geometry without using the fifth postulate. This would be extraordinarily difficult, if not impossible, but luckily there is a simpler option, thanks to the organization of the \elements.
+
+Instead of considering every proposition independently, Euclid allowed each proposition to assume any propositions that have already been proven as additional postulates. Thus if we can prove the fifth postulate using the other nine axioms and any propositions that don't depend on the fifth postulate, then we can simply insert this proof as a proposition, and any following propositions can use the fifth postulate as they did before.
+
+One way to attempt this is to consider the quadrilateral below:
+
+\begin{quads}
+\saccheriquad
+\end{quads}
+
+We are given that the bottom angles, $\angle D$ and $\angle C$, are both right angles and that the sides $\overline{AC}$ and $\overline{BD}$ are equal, and we want to show that the top angles, $\angle A$ and $\angle B$, must also be right angles. If we can prove this without using the fifth postulate, mathematicians found that this would in turn imply the fifth postulate, and we would be able to remove it as an axiom.
+
+To start, we can draw in the two diagonals, $\overline{AC}$ and $\overline{BD}$, and consider the triangles $\triangle ACD$ and $\triangle BCD$:
+\begin{quads}[scale=.75]
+\saccheriquad[lrdiag, rldiag]
+\draw[->] (2.5,-.5) -- (-1.5,-4);
+\draw[->] (3.5,-.5) -- (7.5,-4);
+\begin{scope}[yshift=-7cm, xshift=-5cm]
+\draw (0,4) -- (0,0) -- (6,0) -- cycle;
+\draw (-.25,2) -- (.25,2);
+\draw (2.75,-.25) -- (2.75,.25);
+\draw (3.25,-.25) -- (3.25,.25);
+\draw[thick] (0,0) rectangle +(.5,.5);
+\node at (0,4) [anchor=south east] {A};
+\node at (0,0) [anchor=north east] {D};
+\node at (6,0) [anchor=north west] {C};
+\end{scope}
+\begin{scope}[yshift=-7cm, xshift=5cm]
+\draw (6,4) -- (0,0) -- (6,0) -- cycle;
+\draw (5.75,2) -- (6.25,2);
+\draw (2.75,-.25) -- (2.75,.25);
+\draw (3.25,-.25) -- (3.25,.25);
+\draw[thick] (6,0) rectangle +(-.5,.5);
+\node at (6,4) [anchor=south west] {B};
+\node at (0,0) [anchor=north east] {D};
+\node at (6,0) [anchor=north west] {C};
+\end{scope}
+\end{quads}
+
+Euclid proved that if two triangles have two equal sides with an equal angle in between, then those triangles are congruent. This is commonly known now as the SAS (side-angle-side) theorem. Crucially, he proved this without using the fifth postulate, and so we can use it here to say that $\triangle ACD\cong\triangle BDC$. It follows that $\overline{AC}\cong\overline{BD}$, which gives us the important result that the diagonals of such a quadrilateral are equal. We will use this in the next step.
+
+Now we consider the original quadrilateral, and compare it to its mirror image:
+
+\begin{quads}[scale=.75]
+\saccheriquad[shift=-4, lrdiag]
+\saccheriquad[shift=4, name=BADC, lrdiag]
+\end{quads}
+
+Note that in the left quadrilateral I have draw the $\overline{AC}$ diagonal, while in the right one I have drawn the $\overline{BD}$ diagonal. From the previous step, however, we know that these lines are congruent to each other.
+
+We also know from the previous step that $\triangle ACD\cong\triangle BDC$, which implies that $\angle ACD\cong\angle BDC$. Additionally, we know from Postulate 4 that $\angle D\cong\angle C$ (all right angles are equal), and this allows us to use Common Notation 3 (equals subtracted from equals are equal) to say that $\angle C-\angle ACD\cong\angle ACB$ is congruent to $\angle D-\angle BDC\cong\angle BDA$.
+
+We now have that $\overline{AC}\cong\overline{BD}$, $\angle ACB\cong\angle BDA$, and $\overline{BC}\cong\overline{AD}$, which implies, by SAS, that $\triangle ABC\cong\triangle ABD$. This implies that $\angle A\cong\angle B$, and gives us our second important result: the unknown top angles are congruent to each other.
+
+Unfortunately, this is just about where progress stops. The fist four postulates can go a long way, but they are just not capable of saying very much about parallel or intersecting lines, which is what you need to specify that the top angles are right angles. Many mathematicians have attempted to find a solution, and all have failed.
+
+Some, including a few very famous mathematicians, were fooled into thinking they had in fact succeeded only to find that, hidden deep in their proof, was an assumption of the fifth postulate. This is called assuming your conclusions, and it is not a valid proof technique. Anything can be proven true if you begin by assuming it to be so.
+
+This can be harder to spot then you may think. For example, Ptolemy thought he had proven the fifth postulate, however in his proof he assumed that, given a line and a point not on the line, there is exactly one parallel line through that point. This is now commonly known as Playfair's Axiom, and it is equivalent to assuming the fifth postulate. Proclus also attempted a proof, but his depended on parallel lines being a constant distance apart, which is again equivalent to the fifth postulate. Omar Khayyam assumed that converging lines must intersect, another equivalent statement.
+
+There are many examples of this happening, of which the major result is an interesting list of things equivalent to the fifth postulate. Some of them are listed here:
+
+\vspace{-.5cm}
+\begin{itemize}
+\item The top angles of the quadrilateral described earlier are right angles.
+\item Playfair's Axiom
+\item Parallel lines are a constant distance apart.
+\item Converging lines intersect.
+\item There exist triangles that are similar but not congruent.
+\item If a straight line intersects one of two parallels it will intersect the other.
+\item Straight lines parallel to a third line are parallel to each other.
+\item Two intersecting straight lines cannot both be parallel to a third line.
+\item There is no upper limit to the area of a triangle.
+\item The Pythagorean Theorem
+\end{itemize}
+
+This list amazes me. There is such a blend of complex theorems and extraordinarily basic principles, and yet they are all equivalent to one another. And they all depend on just one bizarre axiom.
+
+A reasonable question to ask at this point would be, ``why don't we just replace the fifth postulate with one of the simpler statements from this list?'' The short answer is, we could do that, but there are two problems. One is that we already know how complicated it gets, and so hiding it behind a simple restatement kind of feels like cheating. At this point mathematicians were just as interested in where the fifth postulate lead as they were in removing it as an axiom.
+
+The other problem is that even some of the simpler statements can get pretty complex when you try to make them a little more rigorous. For example, take ``converging lines intersect.'' What does it mean for two lines to converge? You could say that it means that the distance between the lines gets smaller as you approach the intersection point, but how do you measure the distance between two lines? Does it matter if you start rotating things, or do you have to define a coordinate system? These are questions that have to be answered in order for the statement to be useful for proving other statements.
+
+\section*{Saccheri's Proof by Contradiction}
+
+The first major breakthrough came from an Italian mathematician and Jesuit priest named Girolamo Saccheri. In 1733, he wrote a book titled \textit{Euclid Freed of Every Flaw}. While on the one hand, this was yet another mistaken proof of the fifth postulate, it was the method that Saccheri used in his ``proof'' that would ultimately prove important.
+
+He began much as I did in the previous section, considering a quadrilateral with equal sides perpendicular to the base. In fact, this type of quadrilateral is now known as a Saccheri Quadrilateral. And just like me, he went as far as to prove that the top angles are congruent, and even went a little further to say that the line from the midpoint of the top line to the midpoint of the bottom line is perpendicular to both the top and bottom lines.\footnote{You might be tempted to think that this is a proof that the top and bottom lines are parallel. This is a good way to visualize it, however it is yet another hidden assumption of the fifth postulate.}
+
+He was not the first to get this far, but then he had a stroke of genius. Instead of continuing trying to prove that the fifth postulate is necessarily true, which mathematicians had been doing for over a thousand years without success, he tried to prove that the fifth postulate is necessarily \textit{not false}.
+
+This is a very powerful proof technique in mathematics, called a proof by contradiction. This technique had been known even by Euclid himself, however this was the first time it had been applied to his fifth postulate. The idea behind a proof by contradiction is that if you assume a statement you are trying to prove is false, and use that to arrive at some sort of contradiction, like two things are both equal and not equal, then the original statement must be true. So in this case, instead of ignoring the fifth postulate and trying to conjure it out of thin air, he assumed that the fifth postulate was false, and attempted to find a contradiction.
+
+This leads to the question, what does it mean for the fifth postulate to be false? This is a little tricky to see, but the Saccheri Quadrilateral clears things up. Since the top angles being right angles had been shown to be equivalent to the fifth postulate, there are two clear alternatives: the top angles are either acute or obtuse.
+
+\begin{quads}[scale=.75]
+\saccheriquad[type=acute, shift=-4]
+\saccheriquad[type=obtuse, shift=4]
+\end{quads}
+
+The quadrilateral on the left is a depiction of what Saccheri called the hypothesis of acute angle, while the one on the right is the hypothesis of obtuse angle. His goal was to show that in each of these cases, there was a contradiction.
+
+He began with the hypothesis of obtuse angle. Here he used a series of propositions, all valid, to show that the fifth postulate was in fact true, meaning that it was both true and false at the same time, which is a contradiction. What he had actually shown, without realizing it, was that the hypothesis of obtuse angle contradicted Postulate 2, that lines can be extended indefinitely.
+
+Having relatively easily succeeded in disproving the hypothesis of obtuse angle, he presumably approached the hypothesis of acute angle with confidence. This quickly descended, however, into an endless stream of proposition after proposition, without ever discovering a contradiction.
+
+Unfortunately, Saccheri faltered. On the brink of discovering an alternate, and entirely consistent, set of rules for geometry, Saccheri instead twisted his logic around until he was able to convince himself that he had found a contradiction where none existed. Euclidean was too closely tied to the idea of an absolute truth, and of God, and so as a priest, Saccheri simply could not bring himself to consider the possibility of an alternative geometry.
+
+Saccheri died only a few months after the book was published, and so he never realized his mistake. And while his work was subsequently discredited, his proof by contradiction would ultimately be what lead to the discovery of non-Euclidean geometries.
+
+\section*{Discovery of Hyperbolic Geometry}
+
+The first to consider the possibility that other geometries might exist was Johann Heinrich Lambert. In 1766, he wrote a book titled \textit{The Theory of Parallel Lines} in which he followed a similar path to Saccheri, but with a slightly different type of quadrilateral. Instead of two equal sides perpendicular to a base, he simply considered a quadrilateral with three right angles, and some unknown angle. Like Saccheri, he was not the first to consider such a quadrilateral, however his work was considered important enough to name it a Lambert Quadrilateral.
+
+For a Lambert Quadrilateral, the alternatives to the fifth postulate are the same as in a Saccheri quadrilateral: the remaining angle might be acute (hypothesis of acute angle), obtuse (hypothesis of obtuse angle), or it might be a right angle, which is equivalent to the fifth postulate. I don't think there's any real advantage of a Lambert Quadrilateral over a Saccheri Quadrilateral, but that's what he used.
+
+Like Saccheri, Lambert quickly disproved the hypothesis of obtuse angle, but struggled to find a contradiction in the hypothesis of acute angle. Unlike Saccheri, however, he accepted this, and looked deeper. He showed that the problem could be shifted to the sum of the angles of a triangle, where the sum being less than $180\deg$ corresponds to the hypothesis of acute angle, greater than $180\deg$ corresponds to the hypothesis of obtuse angle, and equal to $180\deg$ corresponds to the fifth postulate.
+
+Here he found that the amount that the sum is less than or greater than $180\deg$ depended on the area of the triangle. Specifically, he found that in the hypothesis of obtuse angle, the sum depended on the excess area in a circle that meets the three points of the triangle. This lead him to speculate that in the hypothesis of acute angle, the sum might depend on some strange circle-like object, such as a circle with an imaginary radius. And he was not far off, as it is actually a circle of negative radius, but I cannot even begin to fault him for that.
+
+This concept was again broached in the early 1800's by the German mathematician Carl Friedrich Gauss, and the Hungarian mathematician Wolfgang (or Farkas) Bolyai. The two began much as the others by attempting to prove the fifth postulate by contradiction, but eventually came to the conclusion that this was impossible. Gauss, in particular, became fully comfortable with the concept of other consistent geometries.
+
+Given that Gauss is one of the single greatest mathematicians in history, it would be reasonable to expect that he then worked everything out, just enough to revolutionize the field, before moving on to other things. After all, it wouldn't be the first time he had done that. But he didn't. He never fully expanded his ideas, and didn't even publish what he had worked out. He just gave up.
+
+No one knows why exactly he stopped his work on this problem, but it meant that the story continues to the Russian mathematician Nikolai Ivanovich Lobachevsky. Only a few years after Gauss, Lobachevsky began investigating the problem, and at last, the concept of alternative geometries was fully developed.
+
+Lobachevsky, after becoming convinced himself that there was no proof of the fifth postulate, began to develop a set of rules for a geometry in direct opposition to the fifth postulate. In his work, he considered Playfair's Axiom -- that given a line and a point not on that line, there is exactly one parallel line through that point. This is equivalent to the fifth postulate, but it can be used to describe the two alternatives from before. If there are no parallel lines through that point, then this describes the hypothesis of obtuse angle, while if there are infinitely many parallel lines, then this describes the hypothesis of acute angle.
+
+Lobachevsky used Euclid's axioms, but replaced the fifth postulate with his version of the hypothesis of acute angle. He then worked out proposition after proposition, just as Euclid had, until he became convinced of its consistency. Lobachevsky was so confused about what this new geometry actually looked like that he called it ``imaginary geometry,'' but, nonetheless, he did published his work.\footnote{*cough* Gauss *cough*}
+
+Hurray! Non-Euclidean has been discovered! Well, not so fast. Lobachevsky may have published his work -- in an obscure Russian journal called the \textit{Kazan Messenger}, and as such went unnoticed for another ten years or so. In this time, yet another mathematician got involved.
+
+Janos Bolyai was the son of Farkas Bolyai, who worked with Gauss on his feeble attempt at developing a non-Euclidean geometry. After being exposed to the problem, he attempted to continue his father's work. When Farkas found out about this, he sent Janos the following message:
+
+\begin{quote}
+``For God's sake, I beseech you, give it up. Fear it no less than sensual passions because it, too, may take up all your time, and deprive you of your health, peace of mind, and happiness in life.'' \cite{boyer2011history}
+\end{quote}
+
+Janos, as any self-respecting son would do, promptly ignored his father, and soon he had his own geometry, very similar to the one worked out by Lobachevsky (although Janos didn't know that). He convinced his father to publish his results as an appendix in his next paper, published in German, and finally, a non-Euclidean was fully developed and introduced to the world.
+
+When Gauss saw the paper, he reached out to Janos to offer him his support, and apologized to the mathematical community for not publishing his work before.
+
+Just kidding. Gauss reached out to Janos to say that he could not praise his work because it would mean self-praise, seeing as he had already developed it years before. Janos was so embarrassed that he never published again.\footnote{Gauss kinda sucks.}
+
+This still leaves open the question of what this geometry looks like. Easy, it is the geometry that exists on the surface of a hypersphere. That is why it is commonly referred to now as hyperbolic geometry.
+
+What, you want to know what a hypersphere looks like? Well, you know how a sphere can be described as having some constant positive curvature? A hypersphere has constant negative curvature, and it looks something like this:
+
+\begin{fig}{file=hypersphere, width=.4}
+\protect\caption*{\small\source{https://upload.wikimedia.org/wikipedia/commons/f/ff/Pseudosphere.jpg}}
+\end{fig}
+
+Hyperbolic geometry is usually described by two of its properties: there are infinitely many parallel lines through a point, and the sum of the angles in a triangle is less than $180\deg$. You may recognize these as two versions of the hypothesis of acute angle.
+
+To be honest, they're weird. If you want to get a better understanding of what hyperspheres look like, and how hyperbolic geometry works, you can check out this \href{https://www.ted.com/talks/margaret_wertheim_crochets_the_coral_reef}{TED talk}, but other than that, I'm not really going to go into much detail about it, mostly because I can't.
+
+\section*{Riemann and Spherical Geometry}
+
+So now we have two types of geometry: Euclidean geometry, which comes from the fifth postulate, and hyperbolic geometry, which comes from the hypothesis of acute angle. But what about the hypothesis of obtuse angle?
+
+If you just replace the fifth postulate with this, Saccheri showed that it leads to contradiction, and so that doesn't work. But if you remember when I talked about that proof, I mentioned that the contradiction came from Postulate 2, that lines can be extended indefinitely. So what if we get rid of that too? What if we use Euclid's axioms, except lines have a finite maximum length, and we replace the fifth postulate with the hypothesis of obtuse angle? Now we have another consistent geometry.
+
+Just like hyperbolic geometry, this geometry is commonly defined by these two properties: there are no parallel lines, and the sum of the angles in a triangle is larger than $180\deg$. Again, you may be wondering what this looks like, and, fortunately, this time I have a better answer.
+
+This is the geometry on the surface of a sphere, which is why it is commonly referred to as spherical geometry. On a sphere, a straight line is described as the longest circle around the sphere. Think of the equator or the lines of longitude on a globe. Since these lines circle around and meet itself, it all of a sudden becomes clear the requirement that lines have a finite length. Additionally, we see that all of the lines of longitude intersect each other at the north and south poles, while the equator intersects each line, shockingly, at the equator. Therefore we see the requirement that there be no parallel lines. The requirement that the sum of the angles in a triangle is greater than $180\deg$ is a little harder to see, but this is the situation presented in the intro, where Santa walked from the north pole directly south, then west, then north back to the north pole to form a triangle with two right angles.
+
+This geometry was developed by the German mathematician Bernhard Riemann, who was a student of Gauss. But in reality, this was only a small piece of what Riemann did. He actually managed to define the geometry of any arbitrarily curved space. I will not go into detail about this, but suffice it to say that this result was a complete game-changer, and introduced a whole new field of differential geometry.
+
+\section*{Non-Euclidean Geometry in the Real World}
+
+So what is the point of all this? We can define all sorts of weird geometries on different surfaces, but if the world around us is described by Euclidean geometry, why would we ever need to know about other geometries?
+
+Well, how sure are you that the world around us is described by Euclidean geometry? The Earth is a sphere,\lol[https://en.wikipedia.org/wiki/Modern_flat_Earth_societies] and so actually, when you draw a triangle on a piece of paper, the sum of the angles is actually larger than $180\deg$. It's just that the triangle is so small compared to the size of the earth, that the sum is so close to $180\deg$ that we don't notice the difference. But for anything that needs to be more precise, understanding this can be important.
+
+And hyperbolic geometry comes into play in a few unexpected places. When Einstein developed his theory of general relativity, he found that the curvature of space time is hyperbolic. And on a much different scale, things like coral are modeled with hyperbolic geometry, and this may prove important as more research goes into figuring out how to save the dying coral reefs.
+
+But I wonder what if there were no applications. Would different geometries still be useful if everything really was modeled by Euclidean geometry? I think so. The process of discovery forced us to think very carefully about the rules we were using to describe geometry, and now we have a much better understanding of what makes each geometry unique. It has led us to a better understanding of the world around us, regardless of which geometry is used to describe it.
+
+This is why I am not a believer in mathematics for the sake of application. There is nothing wrong with applying mathematics to things, but I think you can run into problems when you try to develop new mathematical principles specifically based on the world around you; you miss out on a huge chunk of the picture.
+
+Euclidean geometry didn't just happen to model the world around us, Euclid chose his axioms because they made sense based on what he saw when he looked around. But because people did not recognize that, it was confused with some inherent truth, and significantly delayed the discovery of these non-Euclidean geometry.
+
+\medskip
+\nocite{*}
+\printbibliography[title=To Learn More]
+
+% \section*{Stuff to Add}
+
+% \begin{aquote}{The Brothers Karamazov, by Fyodor Dostoyevsky}
+%      If God exists and if He really did create the world, then, as we all know, He created it according to the geometry of Euclid and the human mind with the conception of only three dimensions in space. Yet there have been and still are geometricians and philosophers\ldots who doubt whether the whole universe\ldots was only created in Euclid's geometry; they even dare to dream that two parallel lines, which according to Euclid can never meet on earth, may meet somewhere in infinity. I have come to the conclusion that, since I can't understand even that, I can't expect to understand about God\ldots. Even if parallel lines do meet and I see it myself, I shall see it and say that they've met, but still I won't accept it.
+% \end{aquote}
+
+% \begin{aquote}{Augustus De Morgan}
+%      There never has been, and till we see it we never shall believe that there can be, a system of geometry worthy of the name, which has any material departures (we do not speak of corrections or extensions or developments) from the plan laid down by Euclid.
+% \end{aquote}
+
+% \begin{aquote}{Herbert Meschkowski}
+%      The discoverers of non-Euclidean geometry fared somewhat like the biblical king Saul. Saul was looking for some donkeys and found a kingdom. The mathematicians wanted merely to pick a hole in old Euclid and show that one of his postulates which he thought was not deducible from the others is, in fact, so deducible. In this they failed. But they found a new world, a geometry in which there are infinitely many lines parallel to a given line and passing through a given point; in which the sum of the angles in a triangle is less than two right angles; and which is nevertheless free of contradiction.
+% \end{aquote}
+
+Need to find a copy of Euclidean and Non-Euclidean Geometries 4th edition, by Marvin J. Greenberg, preferably without spending $\$100+$
+\end{document}

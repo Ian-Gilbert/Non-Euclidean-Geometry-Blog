@@ -1,0 +1,118 @@
+% Fifth Postulate Visual
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\fifthpostulate}{
+    \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=2]
+    \draw[thick] (-2.5,-.75) -- (2.5,1.25)
+                 (-2.5,.75) -- (2.5,-1.25);
+    \draw[dashed] (2,1.5) -- (2,-1.5);
+    \node[below right] at (-2.5,-.75) {$g$};
+    \node[above right] at (-2.5,.75) {$h$};
+    \node[right] at (2,0) {$s$};
+    \node at (-.25,1.25) {$\alpha+\beta<180\deg$};
+    \clip (2,1.05) -- (-.625,0) -- (2,-1.05);
+    \draw (2,1.05) circle (.75cm);
+    \draw (2,-1.05) circle (.75cm);
+    \node at (1.7,.65) {$\alpha$};
+    \node at (1.7,-.6) {$\beta$};
+    \end{tikzpicture}
+    \end{figure}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Saccheri Quads:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\define@key{quad}{type}{\def\type{#1}}
+\define@key{quad}{name}{\def\name{#1}}
+\define@key{quad}{lrdiag}[false]{\def\lrdiag{\draw[dashed] (tl) -- (br);}}
+\define@key{quad}{rldiag}[false]{\def\rldiag{\draw[dashed] (tr) -- (bl);}}
+\define@key{quad}{shift}{\def\shift{#1}}
+
+\newcommand{\saccheriquad}[1][]{
+  % Default Values:
+  \def\type{normal}
+  \def\name{ABCD}
+  \def\lrdiag{}
+  \def\rldiag{}
+  \def\shift{0}
+  
+  \setkeys{quad}{#1}
+  
+  % If-Statement Counters:
+  \def\normal{normal}
+  \def\acute{acute}
+  \def\obtuse{obtuse}
+  
+  \def\abcd{ABCD}
+  \def\dcba{BADC}
+  
+  \begin{scope}
+    % Bottom Corners
+    \coordinate[xshift=\shift cm] (bl) at (0,0);
+    \coordinate[xshift=\shift cm] (br) at (6,0);
+    
+    % Define Top Corners and Side Marks:
+    \ifx\type\normal
+      \coordinate[xshift=\shift cm] (tl) at (0,4);
+      \coordinate[xshift=\shift cm] (tr) at (6,4);
+      \draw ($(bl) + (-.25,2)$) -- +(.5,0)
+            ($(br) + (-.25,2)$) -- +(.5,0);
+    \fi
+    \ifx\type\acute
+      \coordinate[xshift=\shift cm] (tl) at (-.75,4);
+      \coordinate[xshift=\shift cm] (tr) at (6.75,4);
+      \draw ($(bl) + (-.3,2)$) -- +(.5,0)
+            ($(br) + (-.2,2)$) -- +(.5,0);
+    \fi
+    \ifx\type\obtuse
+      \coordinate[xshift=\shift cm] (tl) at (0.75,4);
+      \coordinate[xshift=\shift cm] (tr) at (5.25,4);
+      \draw ($(bl) + (-.2,2)$) -- +(.5,0)
+            ($(br) + (-.3,2)$) -- +(.5,0);
+    \fi
+    
+    % Draw Quad
+    \draw (bl) -- (br)
+          (bl) .. controls +(0,2.5) .. (tl)
+          (br) .. controls +(0,2.5) .. (tr)
+          (tl) -- (tr);
+    
+    % Right Angle Symbols
+    \draw[thick] (bl) rectangle +(.5,.5)
+                 (br) rectangle +(-.5,.5);
+    
+    % Label Corners:
+    \ifx\name\abcd
+      \node at (tl) [anchor=south east] {A};
+      \node at (tr) [anchor=south west] {B};
+      \node at (br) [anchor=north west] {C};
+      \node at (bl) [anchor=north east] {D};
+    \fi
+    \ifx\name\dcba
+      \node at (tl) [anchor=south east] {B};
+      \node at (tr) [anchor=south west] {A};
+      \node at (br) [anchor=north west] {D};
+      \node at (bl) [anchor=north east] {C};
+    \fi
+    
+    % Diagonals
+    \lrdiag
+    \rldiag
+  \end{scope}
+}
+
+% Center the Quads
+\newenvironment{quads}[1][]
+{
+  \vspace{-.5cm}
+  \begin{center}
+  \begin{tikzpicture}[ultra thick, #1]
+}
+{
+  \end{tikzpicture}
+  \end{center}
+  \vspace{-.5cm}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
